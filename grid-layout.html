@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 20% 1fr 15%;
+            grid-template-rows: 60px 1fr 15%;
+            grid-template-areas: 
+                ". header-area ."
+                "nav-area article-area reclama-area"
+                "nav-area footer-area reclama-area"
+                ;
+            gap: 10px;
+            height: 100vh;
+            margin: 0;
+        }
+
+        header, footer, article, nav, div {
+            padding: 20px;
+            background-color: gold;
+        }
+
+        ul * {
+            font-size: .5em;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .page-header { grid-area: header-area; }
+        .page-article { grid-area: article-area; }
+        .page-nav { 
+            display: grid;
+            align-items: center;
+            grid-area: nav-area; 
+        }
+        .page-reclama { grid-area: reclama-area; }
+        .page-footer { grid-area: footer-area; }
+        @media screen and (max-width: 550px){
+            body {
+                grid-template-columns: 1fr;
+                grid-template-rows: 60px 1fr 70px 1fr 70px;
+                grid-template-areas: 
+                    "header-area"
+                    "article-area"
+                    "reclama-area"
+                    "nav-area"
+                    "footer-area"
+                ;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="page-header">Header</header>
+    <article class="page-article">Article</article>
+    <nav class="page-nav">
+        <ul>
+            <li><a href="">Lorem ipsum dolor sit.</a></li>
+            <li><a href="">Reprehenderit deserunt a labore.</a></li>
+            <li><a href="">Vel reprehenderit exercitationem quae!</a></li>
+            <li><a href="">Labore ad id itaque.</a></li>
+            <li><a href="">Neque sint iste natus!</a></li>
+            <li><a href="">Ducimus velit impedit minus?</a></li>
+        </ul>
+    </nav>
+    <div class="page-reclama">Ads</div>
+    <footer class="page-footer">Footer</footer>
+</body>
+</html>
